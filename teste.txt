@@ -1,3 +1,9 @@
+Nome da empresa: LunaPets
+
+Ramo da empresa: PetShop
+
+Os serviços que a empresa oferecerá e as tecnologias que serão utilizadas.
+
 Definir as equipes (Nome e RA)
 
 Leonardo Luna RA: 2223203106
