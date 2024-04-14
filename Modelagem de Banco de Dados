@@ -1,4 +1,3 @@
-
 -- tabela Clientes
 CREATE TABLE Clientes (
     ID INT AUTO_INCREMENT PRIMARY KEY,
@@ -28,44 +27,74 @@ CREATE TABLE Transacoes (
     FOREIGN KEY (IDCliente) REFERENCES Clientes(ID)
 );
 
---  ItensTransacao
+-- tabela ItensTransacao
 CREATE TABLE ItensTransacao (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
     IDTransacao INT,
     IDProduto INT,
     Quantidade INT,
-   
-);   
--- cliente insere os dados exemplo na tabela Clientes
-INSERT INTO Clientes (Nome, Endereco, Telefone, Email, Senha)
-VALUES ('Claudinei Ramos', 'Rua A, 123', '(11) 96894-5888', 'claudineir63@gmail.com', 'senhaclaudinei'),
-       ('Pedro Vinicius', 'Av. B, 456', '(11) 7777-6666', 'pedroca@email.com', 'senhamaria');
-       ('Andressa da Silva', 'Rua D, 23', '(11) 95000-1111', 'andress@gmail.com', 'senha0000'),
-       ('Danielle Alves', 'Av. F, 456', '(11) 3333-0000', 'dni@email.com', 'senha1234');
-       ('Leonardo Luna', 'Av. c, 900', '(11) 9888-64844', 'LEO@email.com', 'senhaluna');
-       ('Jefferson Gonçalves', 'Rua A, 630', '(11) 95000-546581', 'jefBjos@gmail.com', 'senhakkkk'),
-       ('Pedro Sales', 'Av. H,238 ', '(11) 3333-0000', 'sales@email.com', 'senhasales');
+    PrecoUnitario DECIMAL(10, 2),
+    FOREIGN KEY (IDTransacao) REFERENCES Transacoes(ID),
+    FOREIGN KEY (IDProduto) REFERENCES Produtos(ID)
+);
 
--- dados na tabela Produtos
+-- tabela Pedidos
+CREATE TABLE Pedidos (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    IDCliente INT,
+    DataHora DATETIME,
+    Status VARCHAR(50),
+    FOREIGN KEY (IDCliente) REFERENCES Clientes(ID)
+);
+
+-- tabela ItensPedido
+CREATE TABLE ItensPedido (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    IDPedido INT,
+    IDProduto INT,
+    Quantidade INT,
+    PrecoUnitario DECIMAL(10, 2),
+    FOREIGN KEY (IDPedido) REFERENCES Pedidos(ID),
+    FOREIGN KEY (IDProduto) REFERENCES Produtos(ID)
+);
+
+-- dados tabela Clientes
+INSERT INTO Clientes (Nome, Endereco, Telefone, Email, Senha)
+VALUES 
+    ('Claudinei Ramos', 'Rua A, 123', '(11) 96894-5888', 'claudineir63@gmail.com', 'senhaclaudinei'),
+    ('Pedro Vinicius', 'Av. B, 456', '(11) 7777-6666', 'pedroca@email.com', 'senhamaria'),
+    ('Andressa da Silva', 'Rua D, 23', '(11) 95000-1111', 'andress@gmail.com', 'senha0000'),
+    ('Danielle Alves', 'Av. F, 456', '(11) 3333-0000', 'dni@email.com', 'senha1234'),
+    ('Leonardo Luna', 'Av. c, 900', '(11) 9888-64844', 'LEO@email.com', 'senhaluna'),
+    ('Jefferson Gonçalves', 'Rua A, 630', '(11) 95000-546581', 'jefBjos@gmail.com', 'senhakkkk'),
+    ('Pedro Sales', 'Av. H,238 ', '(11) 3333-0000', 'sales@email.com', 'senhasales');
+
+-- dados exemplo na tabela Produtos
 INSERT INTO Produtos (Nome, Descricao, Preco, QtdEstoque, ImagemProduto)
-VALUES ('Ração para Cães', 'Ração super premium para cães adultos de porte médio', 50.00, 100, 'imagem1.jpg'),
-       ('Brinquedo para Gatos', 'Brinquedo interativo para gatos de todas as idades', 15.00, 50, 'imagem2.jpg');
+VALUES 
+    ('Ração para Cães', 'Ração super premium para cães adultos de porte médio', 50.00, 100, 'imagem1.jpg'),
+    ('Brinquedo para Gatos', 'Brinquedo interativo para gatos de todas as idades', 15.00, 50, 'imagem2.jpg');
 
 -- dados tabela Transacoes (para a versão física)
 INSERT INTO Transacoes (IDCliente, DataHora, Total)
-VALUES (1, '2024-04-16 10:30:00', 65.00),
-       (2, '2024-04-16 11:00:00', 30.00);
+VALUES 
+    (1, '2024-04-16 10:30:00', 65.00),
+    (2, '2024-04-16 11:00:00', 30.00);
 
--- dados  exemplo na tabela ItensTransacao (para a versão física)
+-- dados tabela ItensTransacao (para a versão física)
 INSERT INTO ItensTransacao (IDTransacao, IDProduto, Quantidade, PrecoUnitario)
-VALUES (1, 1, 1, 50.00),
-       (2, 2, 2, 15.00);
+VALUES 
+    (1, 1, 1, 50.00),
+    (2, 2, 2, 15.00);
 
---  dados de exemplo na tabela Pedidos (para a versão online)
+-- dados tabela Pedidos (para a versão online)
 INSERT INTO Pedidos (IDCliente, DataHora, Status)
-VALUES (1, '2024-04-16 12:00:00', 'Pendente'),
-       (2, '2024-04-16 12:30:00', 'Pendente');
+VALUES 
+    (1, '2024-04-16 12:00:00', 'Pendente'),
+    (2, '2024-04-16 12:30:00', 'Pendente');
 
---  dados de exemplo na tabela ItensPedido (para a versão online)
+-- dados tabela ItensPedido (para a versão online)
 INSERT INTO ItensPedido (IDPedido, IDProduto, Quantidade, PrecoUnitario)
-VALUES (1, 1, 1, 50.00),
-       (2, 2, 1, 15.00);
+VALUES 
+    (1, 1, 1, 50.00),
+    (2, 2, 1, 15.00);
