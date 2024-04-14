@@ -1,1 +1,36 @@
 
+-- tabela Clientes
+CREATE TABLE Clientes (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100),
+    Endereco VARCHAR(255),
+    Telefone VARCHAR(20),
+    Email VARCHAR(100),
+    Senha VARCHAR(100)
+);
+
+-- tabela Produtos
+CREATE TABLE Produtos (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100),
+    Descricao TEXT,
+    Preco DECIMAL(10, 2),
+    QtdEstoque INT,
+    ImagemProduto VARCHAR(255)
+);
+
+-- tabela Transacoes
+CREATE TABLE Transacoes (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    IDCliente INT,
+    DataHora DATETIME,
+    Total DECIMAL(10, 2),
+    FOREIGN KEY (IDCliente) REFERENCES Clientes(ID)
+);
+
+--  ItensTransacao
+CREATE TABLE ItensTransacao (
+    IDTransacao INT,
+    IDProduto INT,
+    Quantidade INT,
+   
