@@ -11,3 +11,6 @@ data = pd.read_csv("pet_store_records_2020.csv")
 data.head()
 
 X = data.drop(["pet_type"], axis=1)
+y = data["pet_type"]
+
+y = pd.cut
