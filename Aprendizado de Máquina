@@ -6,4 +6,6 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+data = pd.read_csv("pet_store_records_2020.csv")
 
+data.head()
