@@ -39,5 +39,5 @@ O Projeto Luna Pets é desenvolvido utilizando as seguintes tecnologias:
 - Frontend: HTML, CSS, JavaScript.
 - Backend: Node.js, Express.js.,MySQL
 - Integração de pagamento: 
-- Ferramentas de desenvolvimento: Git,github, VS Code,paython. 
+- Ferramentas de desenvolvimento: Git,github, VS Code,python. 
 
