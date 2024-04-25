@@ -25,3 +25,7 @@ df_encoded = pd.get_dummies(df, columns=['product_id'])
 df_encoded.to_csv('dados_processados.csv', index=False)
 files.download('dados_processados.csv')
 
+Entrega 2: Implementação de Modelos de Aprendizado de Máquina
+
+Entrega 3: Otimização e Validação do Modelo
+
