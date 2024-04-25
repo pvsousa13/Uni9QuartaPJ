@@ -1,25 +1,27 @@
+Entrega 1: Exploração de Dados e Pré-processamento
+
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import confusion_matrix
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-data = pd.read_csv("pet_store_records_2020.csv")
+from google.colab import files
+uploaded = files.upload()
 
-data.head()
+import io
+df = pd.read_csv(io.BytesIO(uploaded['luna_pets.csv']))
 
-X = data.drop(["pet_type"], axis=1)
-y = data["pet_type"]
+print(df.head())
+print(df.info())
+print(df.describe())
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+df.dropna(inplace=True)
 
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform
-X_test_scaled = scaler.transform #Arrumar
+sns.pairplot(df)
+plt.show()
 
-y_pred = modelo.predict(X_test_scaled)#Arrumar
+df_encoded = pd.get_dummies(df, columns=['product_id'])
 
+df_encoded.to_csv('dados_processados.csv', index=False)
+files.download('dados_processados.csv')
 
-matriz_confusao = confusion_matrix(y_test, y_test)
-print("Matriz de Confusão:")
-print(matriz_confusao)
