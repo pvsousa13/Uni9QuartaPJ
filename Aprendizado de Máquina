@@ -32,5 +32,54 @@ print("R-quadrado (R²):", r2)
 
 Entrega 2: Implementação de Modelos de Aprendizado de Máquina
 
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+data = pd.read_csv("luna_pets.csv")
+
+data.head()
+
+X = data.drop(["Y","Z"], axis=1)
+y = data["Y"]
+
+y = pd.cut(y, bins=2, labels=['baixo venda', 'alta venda'])
+
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+X_train, X_val, y_train, y_val = train_test_split(X_scaled, y, test_size=0.3, random_state=42)
+
+knn_cls = KNeighborsClassifier(n_neighbors=5)
+knn_cls.fit(X_train, y_train)
+
+y_pred = knn_cls.predict(X_val)
+
+accuracy = accuracy_score(y_val, y_pred)
+precision = precision_score(y_val, y_pred, average='weighted', zero_division='warn')
+recall = recall_score(y_val, y_pred, average='weighted', zero_division='warn')
+f1 = f1_score(y_val, y_pred, average='weighted', zero_division='warn')
+
+print("Acurácia:", accuracy)
+print("Precisão:", precision)
+print("Recall:", recall)
+print("F1-score:", f1)
+
+cm = confusion_matrix(y_val, y_pred)
+plt.figure(figsize=(10, 8))
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", cbar=False)
+plt.xlabel('Predicted labels')
+plt.ylabel('True labels')
+plt.title('Confusion Matrix')
+plt.show()
+
+
+
+
+
 Entrega 3: Otimização e Validação do Modelo
 
