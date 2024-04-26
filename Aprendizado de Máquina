@@ -112,8 +112,8 @@ for cluster in range(n_clusters):
     plt.scatter(cluster_data['Z'], cluster_data['R'], label=f'Cluster {cluster}')
 
     plt.title('Clusters de Dados de Habitação na Califórnia')
-plt.xlabel('R')
-plt.ylabel('Z')
+plt.xlabel('X')
+plt.ylabel('Y')
 plt.legend()
 plt.show()
 
