@@ -109,7 +109,7 @@ plt.figure(figsize=(10, 6))
 
 for cluster in range(n_clusters):
     cluster_data = df[df['cluster'] == cluster]
-    plt.scatter(cluster_data['Z'], cluster_data['R'], label=f'Cluster {cluster}')
+    plt.scatter(cluster_data['X'], cluster_data['Y'], label=f'Cluster {cluster}')
 
     plt.title('Clusters de Dados de Habitação na Califórnia')
 plt.xlabel('X')
