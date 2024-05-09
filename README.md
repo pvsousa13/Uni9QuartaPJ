@@ -1,7 +1,7 @@
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=00bfbf&height=120&section=header"/>
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=00bfbf&size=35&center=true&vCenter=true&width=1000&lines=Sejam+Bem-Vindos+á+LunaPets!)](https://git.io/typing-svg)
-
+<img src="[https://exemplo.com/logo.png](https://static.vecteezy.com/ti/vetor-gratis/p3/5901216-silhueta-de-cachorro-e-lua-fofo-vetor.jpg)" alt="Logo da Minha Empresa">
 # Luna Pets - Pet Shop Online e Físico
 
 ## Descrição do Projeto
