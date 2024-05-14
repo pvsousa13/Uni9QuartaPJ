@@ -1,7 +1,11 @@
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=00bfbf&height=120&section=header"/>
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=00bfbf&size=35&center=true&vCenter=true&width=1000&lines=Sejam+Bem-Vindos+á+LunaPets!)](https://git.io/typing-svg)
-<img src="[https://exemplo.com/logo.png](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Fpetshopbrazil%2F&psig=AOvVaw2OkTkiw4SgGqKNMJZAMENM&ust=1715812141747000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMjZ68eYjoYDFQAAAAAdAAAAABAE)" alt="Logo da Minha Empresa">
+
+<div align="center">
+<img src="https://desblogada.files.wordpress.com/2021/05/kaka-cordovil-java-developer-2.gif" width="700px" />
+</div>
+
 
 # Luna Pets - Pet Shop Online e Físico
 
