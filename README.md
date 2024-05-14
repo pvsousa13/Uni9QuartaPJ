@@ -3,7 +3,7 @@
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=00bfbf&size=35&center=true&vCenter=true&width=1000&lines=Sejam+Bem-Vindos+á+LunaPets!)](https://git.io/typing-svg)
 
 <div align="center">
-<img src="https://desblogada.files.wordpress.com/2021/05/kaka-cordovil-java-developer-2.gif" width="700px" />
+<img src="[https://desblogada.files.wordpress.com/2021/05/kaka-cordovil-java-developer-2.gif](https://media.istockphoto.com/id/612739772/pt/foto/collie-fronteira-fofinho-com-grande-animal-de-estima%C3%A7%C3%A3o-osso-em-loja-de-animais-de-estima%C3%A7%C3%A3o.jpg?s=612x612&w=0&k=20&c=GroizKDZ3tg2r0L66bunLafz70BwFz2SNla3Svlm8oc=)" width="700px" />
 </div>
 
 
